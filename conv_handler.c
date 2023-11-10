@@ -7,7 +7,7 @@
 *@i: current index of operation on format string
 */
 
-void conv_handler(const char *form, va_list args,int i)
+void conv_handler(const char *form, va_list args, int i)
 {
 	char *str;
 	int ch;
@@ -21,5 +21,5 @@ void conv_handler(const char *form, va_list args,int i)
 		str = va_arg(args, char *);
 		_strwrite(str);
 	}
-	
+
 }

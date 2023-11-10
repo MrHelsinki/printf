@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*_strlen() - function to calculate a string length
+*_strlen - function to calculate a string length
 *@s: the string in question
 *Return: len of string
 */
@@ -20,7 +20,7 @@ int _strlen(const char *s)
 }
 
 /**
-*_write : print 1 single character
+*_write - print 1 single character
 *@c: char to print
 *Return: 1 on success or -1 on failure
 */
@@ -45,12 +45,13 @@ void _strwrite(char *s)
 }
 
 /**
-*int_tostring - write int num to STDOUT
+*_intwrite  - write int num to STDOUT
 *@num: num to convert
 */
 void _intwrite(int num)
 {
 	int num_cp;
+
 	if (num < 0)
 	{
 		_write('-');
