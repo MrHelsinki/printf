@@ -8,28 +8,30 @@
 
 int _printf(const char *format, ...)
 {
-	int printed_char;
+	int printed_char, i;
 	int ch;
-	char *str;
 	va_list args;
 
 	printed_char = 0;
+	i = 0;
 
 	va_start(args, format);
 
 
-	for (int i = 0; i < _strlen(format); i++)
+	while (i < _strlen(format))
 	{
 		ch = format[i];
 		if (ch != '%' && ch != '\\')
+		{
 			_write(ch);
 			printed_char++;
-		else if (ch == '%')
+		} else if (ch == '%')
 		{
 			conv_handler(format, args, i);
 			printed_char++;
 			i++;
 		}
+		i++;
 	}
 	va_end(args);
 
