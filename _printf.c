@@ -33,11 +33,14 @@ int _printf(const char *format, ...)
 			conv_handler(format, args, i);
 			printed_char++;
 			i++;
+		} else if (ch == '\n')
+		{
+			_write('\n');
+			printed_char++;
 		}
 		i++;
 	}
 	va_end(args);
-
 
 	return (printed_char);
 }
