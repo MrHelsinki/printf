@@ -18,18 +18,18 @@ int _printf(const char *format, ...)
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	while (i < _strlen(format))
+	while (*format)
 	{
-		if (format[i] == '%')
+		if (*format == '%')
 		{
 			len += conv_handler(format, args, i);
-			i += 2;
+			format += 2;
 			continue;
 		}
 
-		_write(format[i]);
+		_write(*format);
+		format++;
 		len++;
-		i++;
 	}
 
 	va_end(args);
