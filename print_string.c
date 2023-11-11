@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-*write_string - prints a string to STDOUT
+*print_string - prints a string to STDOUT
 *@args: string to print
 *Return: length printed
 */

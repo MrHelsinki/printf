@@ -23,6 +23,11 @@ int write_int(int n)
 	return (len);
 }
 
+/**
+*print_int - func
+*@args: list
+*Return: length
+*/
 int print_int(va_list args)
 {
 	return (write_int(va_arg(args, int)));
