@@ -7,7 +7,7 @@
 
 int print_unsigned(va_list arg_list)
 {
-	unsigned int num = va_arg(arg_list, unsigned int)
+	unsigned int num = va_arg(arg_list, unsigned int);
 	unsigned int temp = num;
 	int length = 0;
 	int *buff;
