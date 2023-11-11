@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			len += conv_handler(format, args);
-			format ++;
+			format++;
 			continue;
 		}
 
