@@ -6,7 +6,7 @@
 *Return: length printed
 */
 
-int write_string(va_list args)
+int print_string(va_list args)
 {
 	int len;
 	char *str;

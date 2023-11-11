@@ -6,7 +6,7 @@
 *Return: return how many chars printed
 */
 
-int write_char(va_list args)
+int print_char(va_list args)
 {
 	int ch;
 

@@ -11,8 +11,10 @@
 int conv_handler(const char *form, va_list args, int i)
 {
 	converter_t converter[] = {
-		{"c", write_char},
-		{"s", write_string},
+		{"c", print_char},
+		{"s", print_string},
+		{"d", print_int},
+		{"i", print_int},
 		{NULL, NULL}
 	};
 

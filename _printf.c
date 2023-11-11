@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include "stdio.h"
 /**
 *_printf - printf clone
 *@format: string with option
