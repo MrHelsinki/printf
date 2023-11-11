@@ -42,5 +42,11 @@ int main(void)
     printf("Unknown:[%r]\n");
 	_printf("binary:%b\n", 30);
 	printf("binary:%b\n", 30);
+
+	printf("binary:%b\n", 32430);
+	_printf("binary:%b\n", 32430);
+
+	printf("binary:%b\n", 0);
+	_printf("binary:%b\n", 0);
     return (0);
 }

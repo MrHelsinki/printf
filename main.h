@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-
+#include <stdlib.h>
 
 
 /**
@@ -30,4 +30,5 @@ int _printf(const char *format, ...);
 int print_percent(void);
 int conv_handler(va_list, const char *, int);
 int print_binary(va_list);
+int bit_counter(int);
 #endif

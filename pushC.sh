@@ -6,7 +6,7 @@ for ((i=1; i<=10; i++)); do
     git commit -m "Commit $i"
 done
 
-git push origin main  
+git push origin main
 
 echo "Done"
 
