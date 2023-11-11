@@ -28,5 +28,5 @@ int print_string(va_list val);
 int _write(char c);
 int _printf(const char *format, ...);
 int print_percent(void);
-int conv_handler(va_list,const char *, int);
+int conv_handler(va_list, const char *, int);
 #endif

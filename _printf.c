@@ -22,7 +22,7 @@ int _printf(const char * const format, ...)
 		tmp = conv_handler(arg_list, format, i);
 		if (tmp != 0)
 		{
-			i += 2; 
+			i += 2;
 			continue;
 		}
 		_write(format[i]);

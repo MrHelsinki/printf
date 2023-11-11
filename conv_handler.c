@@ -1,13 +1,13 @@
 #include "main.h"
 
 /**
-*conv_handler - handle % 
+*conv_handler - handle %
 *@arg_list: arg variables
 *@i: fromat index
 *Return: len printed
 */
 
-int conv_handler(va_list arg_list,const char* format, int i)
+int conv_handler(va_list arg_list, const char *format, int i)
 {
 	converter_t converter[] = {
 		{"%s", print_string},
