@@ -4,7 +4,6 @@
 *conv_handler - handle conversions in format string
 *@form: format string
 *@args: list of variables
-*@i: current index of operation on format string
 *Return: length printed
 */
 
