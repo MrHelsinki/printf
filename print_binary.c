@@ -2,7 +2,7 @@
 
 /**
  * print_binary - print binary num
- * @val: list of variables
+ * @arg_list: list of variables
  * Return: len printed
  */
 int print_binary(va_list arg_list)
