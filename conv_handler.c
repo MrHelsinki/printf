@@ -25,7 +25,7 @@ int conv_handler(va_list arg_list, const char *format, int i)
 		if (converter[struct_index].sign[0] == format[i])
 			if (converter[struct_index].sign[1] == format[i + 1])
 			{
-				len += converter[struct_index].func(arg_list);
+				len = converter[struct_index].func(arg_list);
 				return (len);
 			}
 		struct_index--;

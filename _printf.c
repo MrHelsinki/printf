@@ -23,6 +23,7 @@ int _printf(const char * const format, ...)
 		if (tmp != 0)
 		{
 			i += 2;
+			len += tmp;
 			continue;
 		}
 		_write(format[i]);
