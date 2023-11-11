@@ -10,6 +10,12 @@
 
 int conv_handler(const char *form, va_list args, int i)
 {
+	converter_t converter[] = {
+		{"c", write_char},
+		{"s", write_string},
+		{NULL, NULL}
+	};
+
 	int y, len, struc_len;
 
 	y = 0;
