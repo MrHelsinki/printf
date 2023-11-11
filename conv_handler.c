@@ -13,12 +13,20 @@ int conv_handler(va_list arg_list, const char *format, int i)
 	converter_t converter[] = {
 		{"%s", print_string},
 		{"%c", print_char},
-		{"%i", print_int},
+		{"%%", print_percent},
 		{"%d", print_int},
-		{"%%", print_percent}
+		{"%i", print_int},
+		{NULL, NULL}
 	};
 
-	int struct_index = 4, len = 0;
+	int struct_index, len;
+
+	struct_index =0;
+	len = 0;
+	while (converter[struct_index].sign != NULL)
+		struct_index++;
+
+	struct_index --;
 
 	while (struct_index >= 0)
 	{
