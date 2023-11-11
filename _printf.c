@@ -20,12 +20,11 @@ int _printf(const char *format, ...)
 		va_end(args);
 		return (-1);
 	}
-	if (format[0] == '\0')
+	if (format[0] == '%' && format[1] == '\0')
 	{
 		va_end(args);
-		return (0);
+		return(-1);
 	}
-
 	while (i < _strlen(format))
 	{
 		if (format[i] == '%')
