@@ -8,10 +8,9 @@
 
 int _printf(const char *format, ...)
 {
-	int i, len;
+	int len;
 	va_list args;
 
-	i = 0;
 	len = 0;
 	va_start(args, format);
 
@@ -22,8 +21,9 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			len += conv_handler(format, args, i);
-			format += 2;
+			format++;
+			len += conv_handler(format, args);
+			format ++;
 			continue;
 		}
 

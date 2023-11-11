@@ -21,7 +21,7 @@ extern converter_t converter[];
 int _printf(const char *format, ...);
 int _strlen(const char *s);
 int _write(char t);
-int conv_handler(const char *form, va_list args, int i);
+int conv_handler(const char *form, va_list args);
 int print_char(va_list);
 int print_string(va_list);
 int print_int(va_list);
