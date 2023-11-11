@@ -5,21 +5,28 @@
 *@form: format string
 *@args: list of variables
 *@i: current index of operation on format string
+*Return: length printed
 */
 
-void conv_handler(const char *form, va_list args, int i)
+int conv_handler(const char *form, va_list args, int i)
 {
-	char *str;
-	int ch;
+	int y, len, struc_len;
 
-	if (form[i + 1] == 'c')
+	y = 0;
+	len = 0;
+	struc_len = 0;
+
+	while (converter[struc_len].sign != NULL)
+		struc_len++;
+
+	while (y < struc_len)
 	{
-		ch = va_arg(args, int);
-		_write(ch);
-	} else if (form[i + 1] == 's')
-	{
-		str = va_arg(args, char *);
-		_strwrite(str);
+		if (form[i + 1] == converter[y].sign[0])
+		{
+			len += converter[y].func(args);
+		}
+		y++;
 	}
 
+	return (len);
 }

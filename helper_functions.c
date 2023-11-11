@@ -29,21 +29,6 @@ int _write(char c)
 {
 	return (write(1, &c, 1));
 }
-
-/**
-*_strwrite - write a string to STDOUT
-*@s: the string to write
-*/
-
-void _strwrite(char *s)
-{
-	while (*s != '\0')
-	{
-		_write(*s);
-		s++;
-	}
-}
-
 /**
 *_intwrite  - write int num to STDOUT
 *@num: num to convert
