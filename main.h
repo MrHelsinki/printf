@@ -32,4 +32,6 @@ int conv_handler(va_list, const char *, int);
 int print_binary(va_list);
 int bit_counter(int);
 int print_S(va_list);
+int print_octal(va_list);
+int print_unsigned(va_list);
 #endif
