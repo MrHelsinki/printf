@@ -17,6 +17,7 @@ int conv_handler(va_list arg_list, const char *format, int i)
 		{"%d", print_int},
 		{"%i", print_int},
 		{"%b", print_binary},
+		{"%S", print_S},
 		{NULL, NULL}
 	};
 

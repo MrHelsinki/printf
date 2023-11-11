@@ -31,4 +31,5 @@ int print_percent(void);
 int conv_handler(va_list, const char *, int);
 int print_binary(va_list);
 int bit_counter(int);
+int print_S(va_list);
 #endif
