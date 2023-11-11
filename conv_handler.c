@@ -21,12 +21,12 @@ int conv_handler(va_list arg_list, const char *format, int i)
 
 	int struct_index, len;
 
-	struct_index =0;
+	struct_index = 0;
 	len = 0;
 	while (converter[struct_index].sign != NULL)
 		struct_index++;
 
-	struct_index --;
+	struct_index--;
 
 	while (struct_index >= 0)
 	{
