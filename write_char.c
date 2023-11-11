@@ -11,8 +11,6 @@ int write_char(va_list args)
 	int ch;
 
 	ch = va_arg(args, int);
-	if (!ch)
-		return (0);
 	_write(ch);
 
 	return (1);

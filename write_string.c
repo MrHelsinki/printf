@@ -14,9 +14,6 @@ int write_string(va_list args)
 	str = va_arg(args, char *);
 	len = 0;
 
-	if (!str)
-		return (0);
-
 	while (*str != '\0')
 	{
 		_write(*str);
