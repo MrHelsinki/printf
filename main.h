@@ -1,32 +1,31 @@
-#ifndef HEADER_FILE_H
-#define HEADER_FILE_H
+#ifndef MAIN_H
+#define MAIN_H
 
+#include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 
-/**
-*struct converter_struct - boilerplate for functions to convert % signs
-*@sign: sign detected in format passed to _printf
-*@func: func to call to print the appropriate data;
-*/
 
-typedef struct converter_struct
+
+/**
+ * struct convertion_matcher - struct
+ * @sign: char to match
+ * @func: function to execute
+ */
+
+typedef struct convertion_matcher
 {
-	const char *sign;
-	int (*func)(va_list);
+	char *sign;
+	int (*func)();
 } converter_t;
 
-extern converter_t converter[];
 
+int print_int(va_list args);
+int _strlen(char *s);
+int _strlenc(const char *s);
+int print_char(va_list val);
+int print_string(va_list val);
+int _write(char c);
 int _printf(const char *format, ...);
-int _strlen(const char *s);
-int _write(char t);
-int conv_handler(const char *form, va_list args);
-int print_char(va_list);
-int print_string(va_list);
-int print_int(va_list);
-int print_percent(va_list);
-int print_binary(va_list);
-int print_unsigned(va_list);
-int print_octal(va_list);
+int print_percent(void);
 #endif

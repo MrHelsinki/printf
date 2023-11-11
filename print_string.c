@@ -1,25 +1,29 @@
 #include "main.h"
-
 /**
-*print_string - prints a string to STDOUT
-*@args: string to print
-*Return: length printed
-*/
+ * print_string - print string
+ * @arg_list: args
+ * Return: len printed
+ */
 
-int print_string(va_list args)
+int print_string(va_list arg_list)
 {
-	int len;
 	char *str;
+	int i, len;
 
-	str = va_arg(args, char *);
-	len = 0;
-
-	while (*str != '\0')
+	str = va_arg(arg_list, char *);
+	if (str == NULL)
 	{
-		_write(*str);
-		str++;
-		len++;
+		str = "(null)";
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
+			_write(str[i]);
+		return (len);
 	}
-
-	return (len);
+	else
+	{
+		len = _strlen(str);
+		for (i = 0; i < len; i++)
+			_write(str[i]);
+		return (len);
+	}
 }

@@ -1,17 +1,15 @@
 #include "main.h"
 
 /**
-*print_char - print char;
-*@args: list of args
-*Return: return how many chars printed
-*/
-
-int print_char(va_list args)
+ * print_char - write char
+ * @arg_list: arguments
+ * Return: 1
+ */
+int print_char(va_list arg_list)
 {
-	int ch;
+	char ch;
 
-	ch = va_arg(args, int);
+	ch = va_arg(arg_list, int);
 	_write(ch);
-
 	return (1);
 }

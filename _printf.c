@@ -1,37 +1,49 @@
 #include "main.h"
-#include "stdio.h"
+
 /**
-*_printf - printf clone
-*@format: string with option
-*Return: length printed
-*/
+ * _printf - print life
+ * @format: string
+ *Return: len printed
+ */
 
-int _printf(const char *format, ...)
+
+int _printf(const char * const format, ...)
 {
-	int len;
-	va_list args;
+	converter_t  converter[] = {
+		{"%s", print_string},
+		{"%c", print_char},
+		{"%%", print_percent},
+		{"%i", print_int},
+		{"%d", print_int}
+	};
+	va_list arg_list;
+	int i = 0, j, len = 0;
 
-	len = 0;
-	va_start(args, format);
-
+	va_start(arg_list, format);
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 
-	while (*format)
+Here:
+	while (format[i] != '\0')
 	{
-		if (*format == '%')
+		j = 4;
+		while (j >= 0)
 		{
-			format++;
-			len += conv_handler(format, args);
-			format++;
-			continue;
+			if (converter[j].sign[0] == format[i])
+			{
+				if (converter[j].sign[1] == format[i + 1])
+				{
+					len += converter[j].func(arg_list);
+					i += 2;
+					goto Here;
+				}
+			}
+			j--;
 		}
-
-		_write(*format);
-		format++;
+		_write(format[i]);
 		len++;
+		i++;
 	}
-
-	va_end(args);
+	va_end(arg_list);
 	return (len);
 }
