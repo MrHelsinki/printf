@@ -17,6 +17,7 @@ int conv_handler(const char *form, va_list args)
 		{"%", print_percent},
 		{"b", print_binary}, //task2
 		{"u", print_unsigned}, //task3
+		{"o", print_octal}, //task3
 		{NULL, NULL}
 	};
 
