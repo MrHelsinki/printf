@@ -21,5 +21,5 @@ int print_binary(va_list args, unsigned int num)
 		num /= 2;
 	}
 	for (int j = i-1; j >= 0; j--)
-		_intwrite(binary_num[j]);
+		_write(binary_num[j]);
 }
