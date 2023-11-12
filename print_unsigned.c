@@ -20,7 +20,7 @@ int print_unsigned(va_list args)
 	}
 	while (n != 0)
 	{
-		digit = n % 1°;
+		num = n % 10;
 		_write(num + '0');
 		n /= 10;
 		i++
