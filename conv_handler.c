@@ -4,11 +4,10 @@
 *conv_handler - handle conversions in format string
 *@form: format string
 *@args: list of variables
-*@i: current index of operation on format string
 *Return: length printed
 */
 
-int conv_handler(const char *form, va_list args, int i)
+int conv_handler(const char *form, va_list args)
 {
 	converter_t converter[] = {
 		{"c", print_char},
@@ -31,7 +30,7 @@ int conv_handler(const char *form, va_list args, int i)
 
 	while (y < struc_len)
 	{
-		if (form[i + 1] == converter[y].sign[0])
+		if (*form  == converter[y].sign[0])
 		{
 			len += converter[y].func(args);
 		}
